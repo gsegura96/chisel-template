@@ -7,6 +7,14 @@ pipeline {
           image 'mozilla/sbt'
         }
       }
+      stages {
+        stage('sbt test'){
+          steps{
+            echo "running sbt test"
+            sh "sbt 'testOnly gcd.GcdDecoupledTester'"
+          }
+        }
+      }
     }
     
     stage('build') {
