@@ -1,6 +1,14 @@
 pipeline {
   agent any
   stages {
+    stage('Initialize in Docker') {
+      agent {
+        docker {
+          image 'mozilla/sbt'
+        }
+      }
+    }
+    
     stage('build') {
       steps {
         echo 'Building the application'
