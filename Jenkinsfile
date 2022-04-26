@@ -11,7 +11,7 @@ pipeline {
     stage('test') {
       steps {
         echo 'Testing the application'
-        sh "sbt 'testOnly gcd.GcdDecoupledTester'"
+        sh "sbt test"
       }
     }
     
